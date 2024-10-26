@@ -52,6 +52,7 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin: 20px 0; /* Added margin to create space below the search container */
 }
 
 .search-container input {
@@ -115,9 +116,8 @@ main section {
 .movie-poster img {
     max-height: 220px;
     width: 300px;
-    object-fit:contain;
+    object-fit: contain;
     border-radius: 3px;
-  
 }
 
 .movie-info {
@@ -172,5 +172,82 @@ footer {
     padding-top: 15px;
     padding-bottom: 15px;
     color: white;
-    
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .navbar {
+        margin: 0 20px;
+    }
+
+    .search-container input {
+        width: 45vw;
+    }
+
+    .search-container button {
+        width: 10vw;
+    }
+
+    main section {
+        width: 90vw;
+    }
+
+    .movie-container {
+        width: 80vw;
+    }
+}
+
+@media (max-width: 800px) {
+    .search-container input {
+        width: 70vw;
+    }
+
+    .search-container button {
+        width: 20vw;
+    }
+
+    .movie-poster img {
+        max-height: 180px;
+        width: 250px;
+    }
+
+    .movie-info h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .logo img {
+        height: 50px;
+    }
+
+    .logo h1 {
+        font-size: 20px;
+    }
+
+    .search-container input {
+        width: 60vw;
+    }
+
+    .search-container button {
+        width: 30vw;
+    }
+
+    .movie-info h2 {
+        font-size: 22px;
+    }
+
+    .movie-info p {
+        font-size: 14px;
+    }
+
+    /* Hide the header h1 on small screens */
+    .logo h1 {
+        display: none; /* Hides the header h1 */
+    }
+
+    /* Add margin to the search container for spacing */
+    .search-container {
+        margin-top: 20px; /* Adjust this value to increase/decrease space */
+    }
 }
