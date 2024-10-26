@@ -18,18 +18,23 @@ body {
 }
 
 nav {
+    position: relative;
     background: rgba(3, 25, 37, 0.787);
     color: white;
+    margin-right: 10px;
     padding: 15px 0;
+    height: 20vh;
 }
 
 .navbar {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 90vw;
+    max-width: 100vw;
     margin: 0 30px;
     padding: 0 10px;
+
 }
 
 .logo {
@@ -41,6 +46,7 @@ nav {
 .logo img {
     height: 70px;
     width: auto;
+    margin:15px;
     padding-left: 40px;
 }
 
@@ -52,7 +58,8 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 20px 0; /* Added margin to create space below the search container */
+    margin: 20px; /* Added margin to create space below the search container */
+    
 }
 
 .search-container input {
@@ -62,6 +69,7 @@ nav {
     border: 1px solid #ccc;
     width: 35vw;
     margin-right: 5px;
+    
 }
 
 .search-container button {
@@ -84,6 +92,7 @@ main {
     max-width: 1100px;
     margin: 40px auto;
     padding: 0 15px;
+    height: 50vh;
 }
 
 main section {
@@ -199,7 +208,7 @@ footer {
 
 @media (max-width: 800px) {
     .search-container input {
-        width: 70vw;
+        width: 50vw;
     }
 
     .search-container button {
@@ -217,9 +226,7 @@ footer {
 }
 
 @media (max-width: 600px) {
-    .logo img {
-        height: 50px;
-    }
+   
 
     .logo h1 {
         font-size: 20px;
@@ -248,6 +255,6 @@ footer {
 
     /* Add margin to the search container for spacing */
     .search-container {
-        margin-top: 20px; /* Adjust this value to increase/decrease space */
+        margin-top: 10px; /* Adjust this value to increase/decrease space */
     }
 }
