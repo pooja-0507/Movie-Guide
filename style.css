@@ -240,3 +240,29 @@ footer {
         margin-top: 20px; /* Adjust this value to increase/decrease space */
     }
 }
+@media (max-width: 400px) {
+
+    .logo h1 {
+        font-size: 20px;
+    }
+    .search-container input {
+        width: 40vw;
+    }
+    .search-container button {
+        width: 15vw;
+    }
+    .movie-info h2 {
+        font-size: 18px;
+    }
+    .movie-info p {
+        font-size: 12px;
+    }
+    /* Hide the header h1 on small screens */
+    .logo h1 {
+        display: none; /* Hides the header h1 */
+    }
+    /* Add margin to the search container for spacing */
+    .search-container {
+        margin-top: 20px; /* Adjust this value to increase/decrease space */
+    }
+}
