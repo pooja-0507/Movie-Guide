@@ -6,7 +6,8 @@ const inputBox = document.querySelector('.inputBox');
 const getMovieInfo = async (movie) => {
     try{
     const myAPIkey = "6f5dc3a5";
-    const url = `http://www.omdbapi.com/?apikey=${myAPIkey}&t=${movie}`;
+        const url = `https://www.omdbapi.com/?apikey=${myAPIkey}&t=${movie}`;
+
     const response = await fetch(url);
     if(!response.ok)
     {
@@ -28,42 +29,40 @@ const showMovieData = (data) => {
     const { Title, imdbRating, Genre, Released, Runtime, Actors, Plot, Poster } = data;
 
     // Clear previous content
-    movieContainer.innerHTML = ''; // Clear previous content
-movieContainer.classList.remove('noBackground'); // Remove the class
-
-
+    movieContainer.innerHTML = '';
+    movieContainer.classList.remove('noBackground');
 
     const movieElement = document.createElement('div');
     movieElement.classList.add('movie-info');
     movieElement.innerHTML = `<h2>${Title}</h2>
-                              <p><strong>Rating :&#11088 </strong> ${imdbRating}</p>`;
+                              <p><strong>Rating: &#11088;</strong> ${imdbRating}</p>`;
 
     const movieGenreElement = document.createElement('div');
     movieGenreElement.classList.add('movie-genre');
-
     Genre.split(",").forEach(element => {
         const p = document.createElement('p');
         p.innerText = element;
         movieGenreElement.appendChild(p);
     });
 
-
-    //creating movie poster
-    const moviePosterElement= document.createElement('div');
+    // Create movie poster with fallback if missing
+    const moviePosterElement = document.createElement('div');
     moviePosterElement.classList.add('movie-poster');
-    moviePosterElement.innerHTML=`<img src="${Poster}"/>`
+    const PosterURL = Poster !== 'N/A' ? Poster : 'https://th.bing.com/th/id/OIP.xjJQYPq-KlFeHuKk5BAP-AHaHa?rs=1&pid=ImgDetMain'; 
+    moviePosterElement.innerHTML = `<img src="${PosterURL}" alt="Movie Poster"/>`;
 
     movieElement.appendChild(moviePosterElement);
     movieElement.appendChild(movieGenreElement);
 
-
-    movieElement.innerHTML +=`<p><strong> Released Date:</strong> ${Released}</p>
-    <p><strong>Duration: </strong> ${Runtime}</p>
-    <p><strong>Cast: </strong> ${Actors}</p>
-    <p><strong>Plot: </strong> ${Plot}</p>`;
+    movieElement.innerHTML += `<p><strong>Released Date:</strong> ${Released}</p>
+                               <p><strong>Duration:</strong> ${Runtime}</p>
+                               <p><strong>Cast:</strong> ${Actors}</p>
+                               <p><strong>Plot:</strong> ${Plot}</p>`;
 
     movieContainer.appendChild(movieElement);
-}
+};
+
+   
 
 
 
